@@ -15,13 +15,20 @@ export default class News extends React.Component {
     pageSize: PropTypes.number,
   };
 
-  constructor() {
-    super();
+  capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
+
+  constructor(props) {
+    super(props);
     this.state = {
       articles: [],
       loading: false,
       page: 1,
     };
+    document.title = `${this.capitalizeFirstLetter(
+      this.props.category
+    )}-NewsApp`;
   }
 
   async updateNews() {
@@ -100,7 +107,10 @@ export default class News extends React.Component {
   render() {
     return (
       <div className="container my-3">
-        <h2>Daily News at ur fingertips</h2>
+        <h2>
+          NewsApp - Top {this.capitalizeFirstLetter(this.props.category)}{" "}
+          Headlines
+        </h2>
         {this.state.loading && <Spinner />}
         <div className="row ">
           {!this.state.loading &&
