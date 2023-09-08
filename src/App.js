@@ -5,11 +5,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LoadingBar from "react-top-loading-bar";
 import React, { useState } from "react";
 
-function App() {
+export default function App() {
   const [progress, setProgress] = useState(0);
   // const apiKey = process.env.REACT_APP_NEWS_API;
   const apiKey = "c9743984a8fb4b60b0252b165c5a845f";
-  console.log(apiKey);
 
   return (
     <div>
@@ -126,5 +125,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
