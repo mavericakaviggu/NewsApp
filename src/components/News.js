@@ -30,7 +30,7 @@ export default function News(props) {
   };
 
   useEffect(() => {
-    document.title = `${this.capitalizeFirstLetter(props.category)}-NewsApp`;
+    document.title = `${capitalizeFirstLetter(props.category)}-NewsApp`;
     updateNews(); // eslint-disable-next-line
   }, []);
 
